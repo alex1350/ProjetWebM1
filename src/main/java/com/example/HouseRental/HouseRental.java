@@ -30,22 +30,22 @@ public class HouseRental {
         return houses;
     }
 
-    @GetMapping("/houses/{address}")
-    public House aHouse(@PathVariable("address") String address) throws Exception {
+    @GetMapping("/houses/{id}")
+    public House aHouse(@PathVariable("id") int id) throws Exception {
         for (House house : houses) {
-            if (house.getAddress().equals(address)) {
+            if (house.getId().equals(id)) {
                 return house;
             }
         }
         return null;
     }
 
-    @PutMapping(value = "/houses/{address}")
+    @PutMapping(value = "/houses/{id}")
     public void rent(
-            @PathVariable("address") String address,
+            @PathVariable("id") int id,
             @RequestParam(value = "rent", required = true) boolean rent) throws Exception {
 
-        House house = this.aHouse(address);
+        House house = this.aHouse(id);
         if (house != null) {
             house.setRented(rent);
         }
