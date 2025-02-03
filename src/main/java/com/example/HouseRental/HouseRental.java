@@ -1,3 +1,4 @@
+package com.example.HouseRental;
 
 
 import org.springframework.web.bind.annotation.*;
