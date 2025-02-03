@@ -1,13 +1,15 @@
 // package com.example.masterSecu;
 
 public class House {
-
+    
+    int id; 
     String address;
     int numberOfRooms;
     int price;
     boolean rented;
 
-    public House(String address, int numberOfRooms, int price) {
+    public House(int id,String address, int numberOfRooms, int price) {
+        this.id = id;
         this.address = address;
         this.numberOfRooms = numberOfRooms;
         this.price = price;
@@ -16,6 +18,10 @@ public class House {
     public House() {
     }
 
+    public int getId(){
+        return id;
+    }
+    
     public String getAddress() {
         return address;
     }
