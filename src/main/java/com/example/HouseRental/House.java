@@ -1,4 +1,4 @@
-// package com.example.masterSecu;
+package com.example.HouseRental;
 
 public class House {
     
