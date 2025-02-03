@@ -1,4 +1,4 @@
-// package com.example.masterSecu;
+
 
 import org.springframework.web.bind.annotation.*;
 
@@ -12,11 +12,11 @@ public class HouseRental {
     List<House> houses = new ArrayList<House>();
 
     public HouseRental() {
-        House house = new House("123 Main St", 3, 1500);
+        House house = new House(1,"123 Main St", 3, 1500);
         houses.add(house);
-        house = new House("456 Oak Ave", 4, 2000);
+        house = new House(2, "456 Oak Ave", 4, 2000);
         houses.add(house);
-        house = new House("789 Pine Rd", 2, 1200);
+        house = new House(3, "789 Pine Rd", 2, 1200);
         houses.add(house);
     }
 
