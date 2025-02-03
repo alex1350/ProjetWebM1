@@ -20,7 +20,11 @@ public class HouseRental {
         house = new House(3, "789 Pine Rd", 2, 1200);
         houses.add(house);
     }
-
+    
+    @GetMapping("/")
+    public String home() {
+        return "index";
+    }
     @GetMapping("/houses")
     public List<House> getHouses() {
         return houses;
