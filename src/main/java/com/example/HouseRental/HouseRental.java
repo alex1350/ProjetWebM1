@@ -2,7 +2,9 @@ package com.example.HouseRental;
 
 
 import org.springframework.web.bind.annotation.*;
-
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -20,11 +22,14 @@ public class HouseRental {
         house = new House(3, "789 Pine Rd", 2, 1200);
         houses.add(house);
     }
-    
+
     @GetMapping("/")
-    public String home() {
-        return "index"; // Cela cherchera un fichier index.html dans src/main/resources/templates/
+    public ResponseEntity<Void> home() {
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Location", "/index.html");
+        return new ResponseEntity<>(headers, HttpStatus.FOUND); // HTTP 302 Redirect
     }
+
     @GetMapping("/houses")
     public List<House> getHouses() {
         return houses;

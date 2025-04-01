@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: houserental
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: houserental
+  template:
+    metadata:
+      labels:
+        app: houserental
+    spec:
+      containers:
+        - image: alexballe/houserental:1
+          imagePullPolicy: IfNotPresent
+          name: houserental
+      restartPolicy: Always
