@@ -33,7 +33,7 @@ public class HouseRental {
     @GetMapping("/houses/{id}")
     public House aHouse(@PathVariable("id") int id) throws Exception {
         for (House house : houses) {
-            if (house.getId().equals(id)) {
+            if (house.getId()==id) {
                 return house;
             }
         }
