@@ -23,7 +23,7 @@ public class HouseRental {
     
     @GetMapping("/")
     public String home() {
-        return "index";
+        return "index"; // Cela cherchera un fichier index.html dans src/main/resources/templates/
     }
     @GetMapping("/houses")
     public List<House> getHouses() {
